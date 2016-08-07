@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, EventEmitter} from '@angular/core';
 
 
 
@@ -12,12 +12,31 @@ import { AlphaComponent } from '../../alpha/alpha.component';
 })
 export class MenuItemsMainComponent extends AdminReCore {
 
+    // Events
+    MenuItemRequestChanged: EventEmitter<any> = new EventEmitter();
+
     constructor() {
         super();
 
+
+        this.MenuItemRequestChanged.subscribe((args) => {
+
+            console.log("MenuItemRequestChanged fired: " + args)
+
+            // zone.run(() => { // Change the property within the zone, CD will run after
+
+            // });
+
+        });
     }
 
     ngOnInit() {
         console.log("I'm being called when component is initalized after constructor method in MenuItemsMainComponent in main.component.ts");
+
+
+        var b = new Object();
+        b['time'] = new Date();
+        this.MenuItemRequestChanged.emit(b)
+
     }
 }
