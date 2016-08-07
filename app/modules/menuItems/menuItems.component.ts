@@ -19,7 +19,7 @@ export class MenuItemsMainComponent extends AdminReCore {
         super();
 
 
-        this.MenuItemRequestChanged.subscribe((args) => {
+        this.MenuItemRequestChanged.subscribe((args : any) => {
 
             console.log("MenuItemRequestChanged fired: " + args)
 

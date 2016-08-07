@@ -6,13 +6,15 @@ import { Component} from '@angular/core';
 import { AdminReCore } from '../core/core.component';
 import { MenuItemsMainComponent } from '../modules/menuItems/menuItems.component';
 import { StageComponent } from '../modules/stage/stage.component';
+import { ComponentA } from '../component-a/component-a.component';
+import { ComponentB } from '../component-b/component-b.component';
 
 // import template from './alpha.component.html';
 
 @Component({
     selector: 'alpha',
     templateUrl: 'app/alpha/alpha.component.html',
-    directives: [MenuItemsMainComponent, StageComponent],
+    directives: [MenuItemsMainComponent, StageComponent, ComponentA, ComponentB],
 })
 export class AlphaComponent extends AdminReCore {
 
